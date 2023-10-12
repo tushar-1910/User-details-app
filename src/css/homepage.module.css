@@ -1,0 +1,99 @@
+.HomeMain {
+  display: flex;
+  width: 95%;
+  margin: auto;
+  gap: 25px;
+}
+
+/* --------------- left navbar ----------- */
+.mainDiv {
+  background: linear-gradient(180deg, #395bc8 0%, #5e3bc8 100%);
+  width: 12%;
+  height: 500px;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-top: 20px;
+  padding: 45px;
+  text-align: left;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 400;
+  padding-top: 17%;
+}
+
+.mainDiv > hr {
+  color: #5c58580c;
+  border-radius: 30px;
+}
+
+.active {
+  color: #ffffff;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0%;
+}
+
+.active::after {
+  content: ">";
+  margin-left: 0px;
+  font-weight: bold;
+  background: #ffffff;
+  color: grey;
+  border-radius: 100px 0 0 100px;
+  padding: 15px 15px;
+  margin-right: -56px;
+}
+
+.notActive {
+  color: #b3afaf;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+/* ----------- Profile top ---------- */
+.profile_top {
+  width: 93%;
+  padding: 0px 30px;
+  margin-top: 30px;
+}
+
+.profile_top > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile_top > div > h2 {
+  color: rgba(39, 38, 38, 0.822);
+}
+
+.profile {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.profile > h2 {
+  color: rgb(67, 65, 65);
+}
+/* ---------------- Profile ----------- */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  cursor: pointer;
+}
+
+.profile > img {
+  width: 35px;
+  border-radius: 50px;
+}
+
+.profile > p {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(56, 55, 55, 0.822);
+}

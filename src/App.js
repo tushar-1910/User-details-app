@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom'
+import "./App.css";
+import ContestProvider from "./contestApi/ContestProvider";
+import LandingPage from './components/Home';
+import HomePage from './components/Profile';
+import Posts from './components/Posts';
+import Gallery from './components/Gallery';
+import ToDo from './components/Todo';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ContestProvider>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="Profilepage/:id" element={<HomePage />} />
+        <Route path="post" element={<Posts />} />
+        <Route path="gallery" element={<Gallery />} />
+        <Route path="todo" element={<ToDo />} />
+    </Routes>
+      </ContestProvider>
     </div>
   );
 }
