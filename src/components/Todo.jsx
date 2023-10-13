@@ -5,14 +5,12 @@ import { AppContext } from "../contextApi/ContextProvider";
 import style from "../css/comingsoonpage.module.css"
 
 const ToDo = () => {
-  const { setShowProfile } = useContext(AppContext); // getting data from contest api
+  const { setShowProfile } = useContext(AppContext); 
 
   return (
     <div className={style.mainDiv}>
-      {/* --------- Left Navbar -------- */}
       <LeftNav />
 
-      {/* ---------- Profile --------- */}
       <div className={style.topDiv}>
         <div className={style.profile}>
           <h2>ToDo</h2>
@@ -21,7 +19,6 @@ const ToDo = () => {
 
         <hr style ={{ color: "grey", width: "100%" }} />
 
-        {/* ---------- Screen ------- */}
         <div className={style.screen} onClick={() => setShowProfile(false)}>
           <h1 className={style.ComingSoon}>Coming Soon</h1>
         </div>

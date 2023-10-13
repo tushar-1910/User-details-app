@@ -1,6 +1,6 @@
 import React from "react";
-import style from "../css/profilebottom.module.css";
-import Chat from "./Chat";
+import style from "../../css/profilebottom.module.css";
+import Chat from "../Chat";
 
 const ProfileBottom = (props) => {
   const {
@@ -12,14 +12,13 @@ const ProfileBottom = (props) => {
     website,
     company,
     address,
+    id,
   } = props;
 
   return (
     <div className={style.mainDiv}>
-      {/* ---------- (left side)----------- */}
       <div className={style.leftSide}>
         <img src={profilepicture} alt="profile img" />
-        {/* ------------ (name) ----------- */}
         <p>{name}</p>
         <div className={style.userName}>
           <div>
@@ -36,7 +35,6 @@ const ProfileBottom = (props) => {
           </div>
         </div>
         <hr />
-        {/* --------------- (company)--------- */}
         <h2>Company</h2>
         <div className={style.company}>
           <div>
@@ -51,12 +49,9 @@ const ProfileBottom = (props) => {
           </div>
         </div>
       </div>
-      {/* -------- (vertical line) ------ */}
       <p className={style.vl}></p>
 
-      {/* -------- (right side)---------- */}
       <div className={style.rightSide}>
-        {/* -----------(address)------- */}
         <h2>Address:</h2>
         <div className={style.address}>
           <div>
@@ -72,7 +67,6 @@ const ProfileBottom = (props) => {
             <h3>{address.zipcode}</h3>
           </div>
         </div>
-        {/* ---------- (map)---------- */}
         <iframe
           width="100%"
           height="350"
@@ -83,7 +77,6 @@ const ProfileBottom = (props) => {
           marginHeight="0"
           marginWidth="0"
         ></iframe>
-        {/* ---------- (geo)--------- */}
         <div className={style.geo}>
           <p>
             Lat : <span>{address.geo.lat}</span>
@@ -92,10 +85,9 @@ const ProfileBottom = (props) => {
             Lng : <span>{address.geo.lng}</span>
           </p>
         </div>
-       {/* ------------- (chat) ---------- */}
-       <div>
-        <Chat />
-      </div>
+        <div>
+          <Chat loggedUser={id} />
+        </div>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import LeftNav from "./LeftNav";
-import ProfileBottom from "../ProfileBottom";
+import ProfileBottom from "./ProfileBottom";
 import TopNav from "./TopNav";
 import { AppContext } from "../../contextApi/ContextProvider";
 import style from "../../css/profile.module.css";
