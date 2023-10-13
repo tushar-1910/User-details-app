@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import LeftNav from "../components/LeftNav";
-import TopNav from "../components/TopNav";
-import { AppContest } from "../contestApi/ContestProvider";
+import LeftNav from "./Profile/LeftNav";
+import TopNav from "./Profile/TopNav";
+import { AppContext } from "../contextApi/ContextProvider";
 import style from "../css/comingsoonpage.module.css"
 
 const Posts = () => {
-  const { setShowProfile } = useContext(AppContest); // getting data from contest api
+  const { setShowProfile } = useContext(AppContext); // getting data from contest api
   return (
     <div className={style.mainDiv}>
       {/* --------- Left Navbar -------- */}

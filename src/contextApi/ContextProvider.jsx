@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { createContext } from "react";
-import { getProfile } from "../Api/api";
+import { getProfile } from "./api";
 
-export const AppContest = createContext();
-const ContestProvider = ({ children }) => {
+export const AppContext = createContext();
+
+const ContextProvider = ({ children }) => {
   // --------- profile show hide -------
   const [showProfile, setShowProfile] = useState(false);
 
@@ -41,7 +42,7 @@ const ContestProvider = ({ children }) => {
   };
 
   return (
-    <AppContest.Provider
+    <AppContext.Provider
       value={{
         data,
         profileData,
@@ -54,8 +55,8 @@ const ContestProvider = ({ children }) => {
       }}
     >
       {children}
-    </AppContest.Provider>
+    </AppContext.Provider>
   );
 };
 
-export default ContestProvider;
+export default ContextProvider;

@@ -1,30 +1,27 @@
 import React, { useContext } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import LeftNav from "../LeftNav";
+import LeftNav from "./LeftNav";
 import ProfileBottom from "../ProfileBottom";
-import TopNav from "../TopNav";
-import { AppContest } from "../../contestApi/ContestProvider";
-import style from "../../css/homepage.module.css";
+import TopNav from "./TopNav";
+import { AppContext } from "../../contextApi/ContextProvider";
+import style from "../../css/profile.module.css";
 
-const HomePage = () => {
+const Profile = () => {
   const { profileData, getFilterData, setShowProfile, showProfile } =
-    useContext(AppContest); // getting data from contest api
+    useContext(AppContext);
   const { id } = useParams();
   sessionStorage.setItem("id", id);
 
-  // ------------ (fetching data with param id)---------
   useEffect(() => {
-    let ID = sessionStorage.getItem("id") || 1;
-    getFilterData(ID);
+    let userId = sessionStorage.getItem("id") || 1;
+    getFilterData(userId);
   }, [id]);
 
   return (
     <div>
       <div className={style.HomeMain}>
-        {/* ------------ (Left navbar)---------- */}
-        <LeftNav />
-        {/* ----------- (Right part)------------- */}
+        <LeftNav id={id}/>
         {profileData &&
           profileData.map((el) => (
             <div
@@ -32,14 +29,12 @@ const HomePage = () => {
               className={style.profile_top}
               key={el.id}
             >
-              {/* ---------- top nav------- */}
               <div className={style.profile}>
                 <h2>Profile</h2>
                 <TopNav />
               </div>
 
               <hr />
-              {/* ------------- (bottom)------------- */}
               <div onClick={() => setShowProfile(false)}>
                 <ProfileBottom {...el} />
               </div>
@@ -50,4 +45,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Profile;

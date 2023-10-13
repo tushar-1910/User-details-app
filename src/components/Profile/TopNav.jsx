@@ -1,13 +1,12 @@
 import React, { useContext, useEffect } from "react";
-import { AppContest } from "../contestApi/ContestProvider";
-import style from "../css/homepage.module.css";
-import ProfileDetails from "./Profile/ProfileDetails";
+import { AppContext } from "../../contextApi/ContextProvider";
+import style from "../../css/profile.module.css";
+import ProfileDetails from "./ProfileDetails";
 
 const TopNav = () => {
   const { profileData, setShowProfile, showProfile, getFilterData } =
-    useContext(AppContest); // getting data from contest api
+    useContext(AppContext);
 
-  // ------------ (fetching data with param id)---------
   useEffect(() => {
     const ID = sessionStorage.getItem("id") || 1;
     getFilterData(Number(ID));
@@ -22,7 +21,6 @@ const TopNav = () => {
         <img src={profileData[0]?.profilepicture} alt="profile img" />
         <p>{profileData[0]?.name}</p>
       </div>
-      {/* -------- (Profile details component)----- */}
       <ProfileDetails />
     </div>
   );

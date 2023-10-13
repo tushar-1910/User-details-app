@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../../css/landing.module.css";
+import style from "../../css/home.module.css";
 import GetProfiles from "../GetProfiles";
 
 const Home = () => {
